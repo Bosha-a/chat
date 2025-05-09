@@ -170,6 +170,10 @@ from sentence_transformers import SentenceTransformer
 import torch
 import pyarabic.araby as araby
 
+# Streamlit interface
+st.set_page_config(page_title="بوت الفتاوى", layout="centered")
+st.title("Fatwaa Chatbot - بوت الفتاوى")
+
 # Load dataset
 df = pd.read_csv("fatwaa_2.csv")
 
@@ -213,10 +217,6 @@ def get_response(user_query, threshold=0.60):
     if score >= threshold:
         return df['answer'][idx], score, df['question'][idx]
     return "اسف لا املك معلومات كافية, نظرا لعدم الافتاء في الدين", score, ""
-
-# Streamlit interface
-st.set_page_config(page_title="بوت الفتاوى", layout="centered")
-st.title("Fatwaa Chatbot - بوت الفتاوى")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
