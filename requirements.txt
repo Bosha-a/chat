@@ -1,0 +1,7 @@
+numpy==2.2.5
+pandas==2.2.3
+PyArabic==0.6.15
+scikit_learn==1.6.1
+sentence_transformers==4.1.0
+streamlit==1.42.0
+torch==2.6.0+cu118
